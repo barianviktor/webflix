@@ -1,0 +1,8 @@
+<a [routerLink]="['/', mediaCard.media_type, mediaCard.id]">
+  <div>
+    <div>
+      <img [src]="img_api + '/w500/' + mediaCard.poster_path" />
+    </div>
+    {{ mediaCard.title }}
+  </div>
+</a>

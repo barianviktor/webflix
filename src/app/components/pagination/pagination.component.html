@@ -1,0 +1,21 @@
+<div class="pagination-container">
+  <div class="pagination-items">
+    <app-pagination-item
+      *ngIf="page <= total_pages && page > 1"
+      (click)="onSetPage(page - 1)"
+      [content]="'prev'"
+    ></app-pagination-item>
+    <app-pagination-item
+      *ngFor="let paginationItem of paginationItems"
+      (click)="onSetPage(paginationItem)"
+      [selected]="paginationItem == page"
+      [content]="paginationItem"
+    ></app-pagination-item>
+
+    <app-pagination-item
+      *ngIf="page < total_pages"
+      (click)="onSetPage(page + 1)"
+      [content]="'next'"
+    ></app-pagination-item>
+  </div>
+</div>

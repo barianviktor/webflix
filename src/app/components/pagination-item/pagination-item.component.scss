@@ -1,0 +1,16 @@
+.pagination-item{
+    border: 2px solid rgb(107, 107, 107);
+    display: inline-block;
+    padding: 5px;
+    border-radius: 4px;
+    cursor: pointer;
+    color: white;
+    margin: 4px;
+    background-color: rgb(34, 34, 34);
+}
+.selected, 
+.pagination-item:hover {
+    border: 2px solid rgb(248, 53, 53);
+    background-color: rgb(243, 65, 52);
+
+}

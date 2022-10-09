@@ -1,0 +1,26 @@
+<!-- 
+
+<div *ngIf="searchResult$ | async as medias; else loading">
+  {{ medias | json }}
+</div>
+<ng-template #loading>
+  <p>loading</p>
+</ng-template>
+ -->
+<app-search-input
+  [currentQuery]="searchOptions.query"
+  (searchEmitter)="setQuery($event)"
+></app-search-input>
+
+<main>
+  <div *ngIf="searchResult$ | async as result">
+    <app-media-cards-container
+      [mediaCards]="result.results"
+    ></app-media-cards-container>
+    <app-pagination
+      [page]="result.page"
+      [total_pages]="result.total_pages"
+      (setPage)="setPage($event)"
+    ></app-pagination>
+  </div>
+</main>
