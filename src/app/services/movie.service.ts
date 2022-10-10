@@ -16,12 +16,10 @@ export class MovieService {
       },
     });
   }
-  getMovie$(): Observable<any> {
-    return this.http.get<any>(environment.api + '/genre/18-drama/tv/items', {
+  getMovie$(id: number): Observable<any> {
+    return this.http.get<any>(environment.api + '/movie/' + id, {
       params: {
         api_key: environment.key,
-        /* query: 'Game of Thrones',
-        year: 2005, */
       },
     });
   }
